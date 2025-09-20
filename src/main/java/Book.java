@@ -23,6 +23,17 @@ public class Book {
     private String title;
 
 
+    public Book(String isbn, String title, String subject, int pageCount, String author, LocalDate dueDate) {
+        this.author = author;
+        this.dueDate = dueDate;
+        this.isbn = isbn;
+        this.pageCount = pageCount;
+        this.subject = subject;
+        this.title = title;
+    }
+
+
+
     public String getAuthor() {
         return author;
     }

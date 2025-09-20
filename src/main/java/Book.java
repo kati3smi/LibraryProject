@@ -32,7 +32,22 @@ public class Book {
         this.title = title;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return pageCount == book.pageCount && Objects.equals(author, book.author) && Objects.equals(isbn, book.isbn) && Objects.equals(subject, book.subject) && Objects.equals(title, book.title);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(author, isbn, pageCount, subject, title);
+    }
+
+    @Override
+    public String toString() {
+        return title + " by " + author + " ISBN: " + isbn;
+    }
 
     public String getAuthor() {
         return author;

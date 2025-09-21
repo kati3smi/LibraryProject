@@ -25,4 +25,14 @@ public class Reader {
         this.phone = phone;
         books = new ArrayList<>();
     }
+
+    public Code book(Book book) {
+        if(books.contains(book)) {
+            return Code.BOOK_ALREADY_CHECKED_OUT_ERROR;
+        }
+        books.add(book);
+        return Code.SUCCESS;
+    }
+
+
 }

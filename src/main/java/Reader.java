@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Name: Katie Smith
@@ -48,4 +49,18 @@ public class Reader {
     public boolean hasBook(Book book) {
         return books.contains(book);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Reader reader = (Reader) o;
+        return cardNumber == reader.cardNumber && Objects.equals(name, reader.name) && Objects.equals(phone, reader.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cardNumber, name, phone);
+    }
+
+
 }

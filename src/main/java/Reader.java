@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,5 +19,10 @@ public class Reader {
     private String phone;
     private List<Book> books;
 
-
+    public Reader(int cardNumber, String name, String phone) {
+        this.cardNumber = cardNumber;
+        this.name = name;
+        this.phone = phone;
+        books = new ArrayList<>();
+    }
 }

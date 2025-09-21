@@ -62,5 +62,13 @@ public class Reader {
         return Objects.hash(cardNumber, name, phone);
     }
 
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(Book book : books) {
+            sb.append(book.getTitle()).append(", ");
+        }
+        sb.delete(sb.length() - 2, sb.length());
+        return name + " (#" + cardNumber + ") has checked out " + sb.toString();
+    }
 }

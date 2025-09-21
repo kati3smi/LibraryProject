@@ -26,7 +26,7 @@ public class Reader {
         books = new ArrayList<>();
     }
 
-    public Code book(Book book) {
+    public Code addBook(Book book) {
         if(books.contains(book)) {
             return Code.BOOK_ALREADY_CHECKED_OUT_ERROR;
         }
@@ -34,5 +34,15 @@ public class Reader {
         return Code.SUCCESS;
     }
 
+    public Code removeBook(Book book) {
+        if(!books.contains(book)) {
+            return Code.READER_DOESNT_HAVE_BOOK_ERROR;
+        }
+        books.remove(book);
+        if(books.contains(book)) {
+            return Code.READER_COULD_NOT_REMOVE_BOOK_ERROR;
+        }
+        return Code.SUCCESS;
+    }
 
 }

@@ -45,4 +45,7 @@ public class Reader {
         return Code.SUCCESS;
     }
 
+    public boolean hasBook(Book book) {
+        return books.contains(book);
+    }
 }
